@@ -4,7 +4,7 @@ This repository details how to set up docker containers with remote debug server
 
 ## Preface
 
-You're developing a Docker application (with one container or many) and troubleshooting some code. Nothing obvious stands out as a bug, but there's one hidden in there somewhere. You go to debug your application and find that you don't have permissions to do so. This is a common problem on some corperate computers
+You're developing a Docker application (with one container or many) and troubleshooting some code. Nothing obvious stands out as a bug, but there's one hidden in there somewhere. You go to debug your application and find that you don't have permissions to do so. This is a problem I've faced on corperate machines without superuser privileges.
 
 ## Defining requirements
 
