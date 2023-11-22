@@ -14,7 +14,8 @@
 				"go.alternateTools": {
 					"dlv": "/usr/local/bin/dlv",
 					"go": "/usr/local/go/bin/go",
-					"gopls": "/usr/local/bin/gopls"
+					"gopls": "/usr/local/bin/gopls",
+					"staticcheck": "/usr/local/bin/staticcheck"
 				},
 				"python.defaultInterpreterPath": "/usr/bin/python3",
 				"python.analysis.diagnosticSeverityOverrides": {

@@ -15,7 +15,7 @@ To debug a program, there are a few requirements:
 
 ### Everything is remote (the workaround)
 
-We may not have `sudo` access by default on our local machine, but we do in a container! Developing remotely via SSH is nothing new, and Microsoft has even developed an open source "devcontainer" spec which can be followed for remote development. Alright, I'll cut to the chase. You probably already know why you need this.
+We may not have `sudo` access by default on our local machine, but we do in a container! Developing remotely via SSH is nothing new, and Microsoft has even developed an open [devcontainer spec](https://containers.dev/) which can be followed for remote development. Alright, I'll cut to the chase. You probably already know why you need this.
 
 ## Setup
 
