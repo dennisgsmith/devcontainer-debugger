@@ -25,7 +25,7 @@ VSCode may try to automate many of these actions, but in my experience there is 
 
 ### Install debug tools on the server(s)
 
-In order to override the entrpoint and command supplied to each docker service, we can use a [docker-compose.debug.yml](./docker-compose.debug.yml) override file to specify this configuration. Note that we're:
+In order to override the entrypoint and command supplied to each docker service, we can use a [docker-compose.debug.yml](./docker-compose.debug.yml) override file to specify this configuration. Note that we're:
 - Specifying a build step to stop at for the Go service with `target: builder`. In [go_example/Dockerfile](./go_example/Dockerfile) we use [multi-stage builds](https://docs.docker.com/build/building/multi-stage/#stop-at-a-specific-build-stage) to stop at a target layer and specify an entrypoint and command.
 - Supplying a build argument to the Python example with `BUILD_ENV=debug`. In [python_example/Dockerfile](./python_example/Dockerfile) we conditionally install a debugger based on a build argument passed to the layer. The concept is similar to Go in the docker-compose.debug.yml override, just calling [debugpy](https://github.com/microsoft/debugpy/wiki/Command-Line-Reference) instead of Delve.
 - Mounting each service's directory as a volume so changes in the code are synced with the containers.
