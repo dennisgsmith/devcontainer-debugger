@@ -20,8 +20,6 @@ services:
     build:
       context: go_example
       target: builder
-      args:
-        - GOARCH=${DEBUG_GOARCH}
       network: host
     cap_add:
       - SYS_PTRACE

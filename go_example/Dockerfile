@@ -1,9 +1,6 @@
 # this will be the target layer for development
 FROM golang:1.21-alpine AS builder
 
-# any args used in a layer need to be called after the layer's FROM directive
-ARG GOARCH=amd64
-
 RUN apk update && apk add --no-cache git
 
 WORKDIR /go/src/app
@@ -17,7 +14,7 @@ RUN go mod download
 COPY . .
 RUN --mount=type=cache,target=/root/.cache/go-build \
 	--mount=type=cache,target=/go/pkg \
-	GOOS=linux GOARCH=${GOARCH} \
+	GOOS=linux GOARCH=amd64 \
 	go build -ldflags="-w -s" -o /go/bin/hello
 
 # copy the compiled binary over to a blank image for production
