@@ -48,7 +48,7 @@ RUN go install honnef.co/go/tools/cmd/staticcheck@latest
 RUN add-apt-repository -y ppa:deadsnakes/ppa \
 	&& apt-get update \
 	&& apt-get install -y python${PYTHON_VERSION}
-RUN bash -c "python3 -m pip install -U pip setuptools && pip install ${PYTHON_PACKAGES}"
+RUN bash -c "python${PYTHON_VERSION} -m pip install -U pip setuptools && pip install ${PYTHON_PACKAGES}"
 
 # https://github.com/devcontainers/images/blob/main/src/javascript-node/.devcontainer/Dockerfile
 ENV USERNAME=root
