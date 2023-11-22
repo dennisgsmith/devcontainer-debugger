@@ -29,6 +29,16 @@
 				}
 			],
 			"justMyCode": false
+		},
+		{
+			"name": "Node: debug from devcontainer",
+			"type": "node",
+			"request": "attach",
+			"port": 2345,
+			"address": "node_example",
+			"localRoot": "${workspaceFolder}/node_example",
+			"remoteRoot": "/app",
+			"protocol": "inspector"
 		}
 	]
 }

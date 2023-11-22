@@ -12,3 +12,7 @@ services:
   python_example:
     build:
       context: python_example
+
+  node_example:
+    build:
+      context: node_example

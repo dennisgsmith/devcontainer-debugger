@@ -39,3 +39,14 @@ services:
     volumes:
       - ./python_example:/app:cached
     entrypoint: python -m debugpy --listen 0.0.0.0:2345 --wait-for-client /app/main.py
+
+  node_example:
+    image: node_example:debug
+    build:
+      context: node_example
+      network: host
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      - ./node_example:/app:cached
+    entrypoint: node --inspect-brk=0.0.0.0:2345 index.js

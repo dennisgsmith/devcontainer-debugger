@@ -1,16 +1,20 @@
 # devcontainer-debugger
+
 This repository details how to set up docker containers with remote debug servers and a devcontainer with debugging clients.
 
 ## Preface
-You're developing a Docker application (with one container or many) and troubleshooting some code. Nothing obvious stands out as a bug, but there's one hidden in there somewhere. You go to debug your application and find that you don't have permissions to do so.
+
+You're developing a Docker application (with one container or many) and troubleshooting some code. Nothing obvious stands out as a bug, but there's one hidden in there somewhere. You go to debug your application and find that you don't have permissions to do so. This is a common problem on some corperate computers
 
 ## Defining requirements
+
 To debug a program, there are a few requirements:
 1. The programming language, lsp (language server protocol), and its respective debug client.
 2. The debugging tool and program installed with the ability to run a debug server.
 3. Permissions to launch the debug client and attach to a process after connecting to the debug server.
 
 ### Everything is remote (the workaround)
+
 We may not have `sudo` access by default on our local machine, but we do in a container! Developing remotely via SSH is nothing new, and Microsoft has even developed an open source "devcontainer" spec which can be followed for remote development. Alright, I'll cut to the chase. You probably already know why you need this.
 
 ## Setup
