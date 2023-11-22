@@ -14,11 +14,10 @@ ENV PATH=$PATH:/usr/local/go/bin
 # install delve (go debugger), gopls language server, staticcheck
 ENV CGO_ENABLED=0
 ENV GOBIN=/usr/local/bin/
-RUN git clone https://github.com/go-delve/delve \
-	&& cd delve \
-	&& go install github.com/go-delve/delve/cmd/dlv
-RUN go install golang.org/x/tools/gopls@latest
-RUN go install honnef.co/go/tools/cmd/staticcheck@latest
+RUN go install \
+	github.com/go-delve/delve/cmd/dlv@latest \
+	golang.org/x/tools/gopls@latest \
+	honnef.co/go/tools/cmd/staticcheck@latest
 
 # python 3.10.12 is already installed
 RUN python3 -m pip install -U pip && pip install debugpy pyright black
