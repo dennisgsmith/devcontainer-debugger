@@ -1,0 +1,14 @@
+version: "3.9"
+
+networks:
+  default:
+    name: app
+
+services:
+  go_example:
+    build:
+      context: go_example
+
+  python_example:
+    build:
+      context: python_example

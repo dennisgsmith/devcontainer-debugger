@@ -1,0 +1,43 @@
+version: "3.9"
+
+networks:
+  default:
+    name: app
+
+services:
+  devcontainer:
+    build:
+      context: .devcontainer
+      network: host
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      - .:/workspaces:cached
+    command: sleep infinity
+
+  go_example:
+    image: go_example:debug
+    build:
+      context: go_example
+      target: builder
+      args:
+        - GOARCH=${DEBUG_GOARCH}
+      network: host
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      - ./go_example:/go/src/app:cached
+    entrypoint: dlv debug --headless --listen=:2345 --api-version=2 --log --log-output=rpc,debugger,debuglineerr,dap
+
+  python_example:
+    image: python_example:debug
+    build:
+      context: python_example
+      args:
+        - BUILD_ENV=debug
+      network: host
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      - ./python_example:/app:cached
+    entrypoint: python -m debugpy --listen 0.0.0.0:2345 --wait-for-client /app/main.py

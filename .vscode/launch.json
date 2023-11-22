@@ -1,0 +1,34 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Go: debug from devcontainer",
+			"type": "go",
+			"request": "attach",
+			"mode": "remote",
+			"substitutePath": [],
+			"port": 2345,
+			"host": "go_example",
+			"trace": "log",
+			"showRegisters": true,
+			"logOutput": "rpc",
+			"apiVersion": 2
+		},
+		{
+			"name": "Python: debug from devcontainer",
+			"type": "python",
+			"request": "attach",
+			"connect": {
+				"host": "python_example",
+				"port": 2345
+			},
+			"pathMappings": [
+				{
+					"localRoot": "${workspaceFolder}/python_example",
+					"remoteRoot": "/app"
+				}
+			],
+			"justMyCode": true
+		}
+	]
+}

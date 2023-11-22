@@ -1,0 +1,36 @@
+{
+	"service": "devcontainer",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"../docker-compose.debug.yml"
+	],
+	"workspaceFolder": "/workspaces",
+	"remoteUser": "root",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.formatOnSave": true,
+				"go.gopath": "/usr/local/go/bin",
+				"go.alternateTools": {
+					"dlv": "/usr/local/bin/dlv",
+					"go": "/usr/local/go/bin/go",
+					"gopls": "/usr/local/bin/gopls"
+				},
+				"python.defaultInterpreterPath": "/usr/bin/python3",
+				"python.analysis.diagnosticSeverityOverrides": {
+					"reportUnusedImport": "information",
+					"reportMissingImports": "none",
+					"reportMissingModuleSource": "none"
+				},
+				"black-formatter.path": [
+					"/usr/local/bin/black"
+				]
+			},
+			"extensions": [
+				"golang.go",
+				"ms-python.python",
+				"ms-python.black-formatter"
+			]
+		}
+	}
+}
