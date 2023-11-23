@@ -2,24 +2,23 @@
 # this can be set from the cli or docker-compose.yml
 ARG BUILD_ENV
 
-FROM python:3.9
+FROM python:3.11
 ARG BUILD_ENV
 ENV PYTHONUNBUFFERED=1
 
-RUN --mount=type=cache,target=/var/cache/apt \
-	apt-get update -y && apt-get install -y python3-pip
+RUN --mount=type=cache,target=/var/cache/apt apt-get update -y
 
 # Install dependencies...
 COPY requirements.txt .
 RUN --mount=type=cache,target=/root/.cache,id=pip \
-	pip3 install wheel cython numpy -c requirements.txt \
-	&& pip3 install -r requirements.txt \
-	&& pip3 uninstall cython --yes
+	python -m pip install wheel cython numpy -c requirements.txt \
+	&& pip install -r requirements.txt \
+	&& pip uninstall cython --yes
 
-RUN if [ "$BUILD_ENV" = "debug" ]; then pip3 install debugpy; fi
+RUN if [ "$BUILD_ENV" = "debug" ]; then pip install debugpy; fi
 
 COPY . /app/
 WORKDIR /app
 
 # Run app
-CMD python3 main.py
+CMD python main.py

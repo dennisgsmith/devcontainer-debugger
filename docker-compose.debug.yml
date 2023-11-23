@@ -8,6 +8,8 @@ services:
   devcontainer:
     build:
       context: .devcontainer
+      args:
+        - DEVCONTAINER_BASE_IMAGE=${DEVCONTAINER_BASE_IMAGE:-mcr.microsoft.com/devcontainers/base:ubuntu}
       network: host
     cap_add:
       - SYS_PTRACE
