@@ -21,7 +21,7 @@ To debug a program, we need to know about:
 
 ### Building the devcontainer
 
-I wanted the ability to have a base image where I could control what's installed and not have to re-download and install VSCode extensions every time I recreated the dev container, so I opted to build my own base image for the container. See [.devcontainer/Dockerfile](./.devcontainer/Dockerfile) for an example. Note that for `aarch64` (i.e. Mac M1/M2, arm64) compatibility, there are some utilities for cross compilation installed (`g++-x86-64-linux-gnu`, `libc6-dev-amd64-cross`). You can install whatever dependencies you need here that you would regularly use on your local development machine.
+I wanted the ability to have a base image where I could control what's installed and not have to re-download and install VSCode extensions every time I recreated the dev container, so I opted to build my own base image for the container. See [.devcontainer/Dockerfile](./.devcontainer/Dockerfile) for an example. You can install whatever dependencies you need here that you would regularly use on your local development machine.
 
 Specifically, you'll need to install whatever debug server for your language in the targeted layer which your debug session will run. For example, in the go_example Dockerfile, I install [Delve](https://github.com/go-delve/delve/tree/master/Documentation/installation), a debugger for Go, in order to later call it when launching the debug task.
 
