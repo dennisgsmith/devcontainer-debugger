@@ -42,4 +42,4 @@ We'll need to create a [.devcontainer/devcontainer.json](./.devcontainer/devcont
 
 Finally, in [.vscode/launch.json](./.vscode/launch.json), we just need to define the lanch tasks for our IDE to call each service.
 
-After relaunching VS Code (or `CMD+SHIFT+P` and run `Dev Containers: Open Workspace In Container...` from the command pallete), your dev container should start up and you're ready to launch a debugging session!
+After relaunching VS Code (or `Cmd+Shift+P` and run `Dev Containers: Open Workspace In Container...` from the command pallete), your dev container should start up and you're ready to launch a debugging session!

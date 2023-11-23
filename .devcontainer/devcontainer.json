@@ -25,12 +25,14 @@
 				},
 				"black-formatter.path": [
 					"/usr/local/bin/black"
-				]
+				],
+				"typescript.tsserver.nodePath": "/usr/bin/node"
 			},
 			"extensions": [
 				"golang.go",
 				"ms-python.python",
-				"ms-python.black-formatter"
+				"ms-python.black-formatter",
+				"dbaeumer.vscode-eslint"
 			]
 		}
 	}

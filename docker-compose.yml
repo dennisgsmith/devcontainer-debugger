@@ -8,11 +8,14 @@ services:
   go_example:
     build:
       context: go_example
+    restart: unless-stopped
 
   python_example:
     build:
       context: python_example
+    restart: unless-stopped
 
   node_example:
     build:
       context: node_example
+    restart: unless-stopped

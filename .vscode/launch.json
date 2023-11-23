@@ -22,12 +22,6 @@
 				"host": "python_example",
 				"port": 2345
 			},
-			"pathMappings": [
-				{
-					"localRoot": "${workspaceFolder}/python_example",
-					"remoteRoot": "/app"
-				}
-			],
 			"justMyCode": false
 		},
 		{
@@ -38,7 +32,7 @@
 			"address": "node_example",
 			"localRoot": "${workspaceFolder}/node_example",
 			"remoteRoot": "/app",
-			"protocol": "inspector"
+			"continueOnAttach": true
 		}
 	]
 }
