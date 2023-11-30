@@ -4,11 +4,11 @@ This repository details how to set up docker containers with remote debug server
 
 ## Preface
 
-You're developing a Docker application (with one container or many) and troubleshooting some code. Nothing obvious stands out as a bug, but there's one hidden in there somewhere. You go to debug your application and find that you don't have permissions to do so. This is a problem I've faced on machines where I lack superuser privileges. While this is an annoyance, the security concerns are well-founded. So how do we get around this?
+You're developing an application in a Docker container and troubleshooting some code. You go to open your integrated debugger, only to find that you don't have permissions to do so. This is a problem I've faced on machines where I lack superuser privileges. While this is an annoyance, the security concerns are well-founded. So how do we get around this?
 
 ### Everything is remote (the workaround)
 
-We may not have `sudo` access by default on our local machine, but we do in a container! Developing remotely via SSH is nothing new, and Microsoft has even developed an open [devcontainer spec](https://containers.dev/) which can be followed for remote development. Alright, I'll cut to the chase. You probably already know why you need this.
+You may not have `sudo` access by default on your local machine--but you do in a container. Developing remotely via SSH is nothing new, and Microsoft has even developed an open [devcontainer spec](https://containers.dev/) which can be followed for remote development. Alright, I'll cut to the chase. You probably already know why you need this.
 
 ## Setup
 
